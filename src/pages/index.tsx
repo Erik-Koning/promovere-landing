@@ -7,15 +7,21 @@ import { Companies } from '../components/Companies';
 import { WhyPromovere } from '../components/WhyPromovere';
 import { Platform } from '../components/Platform';
 import { Booking } from '../components/Booking';
+import { Facts } from '../components/Facts';
+import { Improving } from '../components/Improving';
+import { Footer } from '../components/Footer';
 
 const Index = () => (
-	<Grid height='100vh' gap={10} alignContent='start'>
+	<Grid height='100vh' alignContent='start'>
 		<Header />
 		<Hero />
 		<Companies />
+		<Facts />
 		<WhyPromovere />
 		<Platform />
+		<Improving />
 		<Booking />
+		<Footer />
 	</Grid>
 );
 

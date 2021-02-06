@@ -1,18 +1,21 @@
 import React from 'react';
-import { Box, Flex, Grid, Heading } from '@chakra-ui/react';
+import { Grid, Heading, HStack, Image } from '@chakra-ui/react';
 
 export const Companies: React.FC = () => {
 	return (
-		<Grid templateColumns='max-content 1fr' alignItems='center' px={20}>
+		<Grid templateColumns='max-content 1fr' alignItems='center' gap={6} px={20} py={12}>
 			<Heading as='h3'>As featured in:</Heading>
-			<Flex justify='center' wrap='wrap'>
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-				<Box m={2} borderRadius='2xl' height='4rem' width='10rem' bg='purple.600' />
-			</Flex>
+			<Grid justifyItems='center'>
+				<HStack spacing={4}>
+					<Image src='/img/sponsors/ddqic.jpg' />
+					<Image src='/img/sponsors/loi.jpg' />
+					<Image src='/img/sponsors/qec.jpg' />
+				</HStack>
+				<HStack spacing={4}>
+					<Image src='/img/sponsors/ivey.jpg' />
+					<Image src='/img/sponsors/launch.jpg' />
+				</HStack>
+			</Grid>
 		</Grid>
 	);
 };
