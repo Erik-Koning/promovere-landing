@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Heading, Text } from '@chakra-ui/react';
+import { Wrapper } from './Wrapper';
 
 const REASONS = [
 	{
@@ -56,25 +57,22 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons }
 	);
 
 	return (
-		<Grid
-			justifyContent='space-between'
-			templateColumns='50% 50%'
-			py={6}
-			px={20}
-			gap={4}
-			bg={isOdd ? 'brand' : 'white'}
-		>
-			{isOdd ? [graphic, info] : [info, graphic]}
-		</Grid>
+		<Wrapper bg={isOdd ? 'brand' : 'none'}>
+			<Grid justifyContent='space-between' templateColumns='50% 50%' py={6} gap={4} bg={isOdd ? 'brand' : 'white'}>
+				{isOdd ? [graphic, info] : [info, graphic]}
+			</Grid>
+		</Wrapper>
 	);
 };
 
 export const WhyPromovere: React.FC = () => {
 	return (
 		<Grid id='why-promovere'>
-			<Heading mx={20} as='h2' p={2} bg='brand' borderRadius='full' width='max-content'>
-				Why Promovere?
-			</Heading>
+			<Wrapper>
+				<Heading as='h2' p={2} bg='brand' borderRadius='full' width='max-content'>
+					Why Promovere?
+				</Heading>
+			</Wrapper>
 
 			<ReasonItem number={1} title='For Employees' reasons={REASONS} />
 			<ReasonItem number={2} title='For Managers' reasons={REASONS} isOdd />
