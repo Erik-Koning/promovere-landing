@@ -28,22 +28,22 @@ interface ReasonItemProps {
 }
 
 const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons }) => {
-	const graphic = <Box />;
+	const Graphic = () => <Box />;
 
-	const listNumber = (
+	const ListNumber = () => (
 		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
 			{number}.
 		</Text>
 	);
 
-	const info = (
+	const Info = () => (
 		<Grid templateColumns={isOdd ? 'max-content 1fr' : '1fr'}>
-			{!isOdd && listNumber}
+			{!isOdd && <ListNumber />}
 			<Grid templateColumns='max-content 1fr' gridColumn={isOdd ? '1 / -1' : '2 / 3'} alignSelf='end' gap={2}>
 				<Heading pb={2} size='lg' alignSelf='end'>
 					{title}
 				</Heading>
-				{isOdd && listNumber}
+				{isOdd && <ListNumber />}
 			</Grid>
 			<Grid gap={6} gridColumn='2 / 3' mt={4}>
 				{reasons.map((reason, index) => (
@@ -59,7 +59,9 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons }
 	return (
 		<Wrapper bg={isOdd ? 'brand' : 'none'}>
 			<Grid justifyContent='space-between' templateColumns='50% 50%' py={6} gap={4} bg={isOdd ? 'brand' : 'white'}>
-				{isOdd ? [graphic, info] : [info, graphic]}
+				{ !isOdd && <Info /> }
+				<Graphic />
+				{ isOdd && <Info /> }
 			</Grid>
 		</Wrapper>
 	);
@@ -73,7 +75,6 @@ export const WhyPromovere: React.FC = () => {
 					Why Promovere?
 				</Heading>
 			</Wrapper>
-
 			<ReasonItem number={1} title='For Employees' reasons={REASONS} />
 			<ReasonItem number={2} title='For Managers' reasons={REASONS} isOdd />
 			<ReasonItem number={3} title='For Businesses' reasons={REASONS} />
