@@ -1,128 +1,58 @@
 import React from 'react';
-import { Grid, Box, Heading, Text } from '@chakra-ui/react';
+import { Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
 export const Improving: React.FC = () => {
+
+	const CircleStyle = {
+		width: "100%",
+		height: "100%",
+		borderRadius: "full"
+	}
+
+	const CircleWithBorderStyle = {
+		...CircleStyle,
+		border: "1px solid",
+		borderColor: "brand"
+	}
+
+	const diagramPadding = "1vw"
+	const diagramSize = useBreakpointValue({ base: "3vw", lg: "2rem" })
+
 	return (
 		<Wrapper>
-			<Grid position='relative' py={40} my={30}>
-				<Box position='absolute' top='0' left='0'>
-					<Heading mb={2}>Ever-Improving</Heading>
-					<Text fontSize='sm'>Machine Learning Algorithm</Text>
-					<Text fontSize='sm'>Improvement cycle based on feedback</Text>
-					<Text fontSize='sm'>Giving employees a voice</Text>
-				</Box>
-				<Box
-					justifySelf='center'
-					alignSelf='center'
-					height='36vw'
-					width='36vw'
-					borderRadius='full'
-					border='2px solid'
-					borderColor='brand'
-					position='relative'
+			<Box py={16}>
+				<Grid 
+					position="relative"
+					height="max-content" 
+					width="100%" 
+					templateColumns={`1fr ${diagramPadding} repeat(16, ${diagramSize}) ${diagramPadding} 1fr`} 
+					templateRows={`max-content ${diagramPadding} repeat(16, ${diagramSize}) ${diagramPadding} max-content`}
+					pt="8rem"
 				>
-					<Box
-						height='26vw'
-						width='26vw'
-						borderRadius='full'
-						border='5vw solid'
-						borderColor='brand'
-						position='absolute'
-						top='50%'
-						left='50%'
-						transform='translate(-50%, -50%)'
-					/>
-					<Text
-						fontWeight='bold'
-						position='absolute'
-						top='0'
-						left='50%'
-						width='max-content'
-						transform='translate(-50%, -4.5rem)'
-					>
-						More Oppurtunities Posted
-					</Text>
-					<Box
-						height='7vw'
-						width='7vw'
-						borderRadius='full'
-						border='3px solid'
-						borderColor='brand'
-						position='absolute'
-						top='0'
-						left='50%'
-						bg='white'
-						transform='translate(-50%, -50%)'
-					/>
-					<Text
-						fontWeight='bold'
-						position='absolute'
-						top='100%'
-						left='50%'
-						width='max-content'
-						transform='translate(-50%, 3.2rem)'
-					>
-						Better Machine Learning Algorithms
-					</Text>
-					<Box
-						height='7vw'
-						width='7vw'
-						borderRadius='full'
-						border='3px solid'
-						borderColor='brand'
-						position='absolute'
-						top='100%'
-						left='50%'
-						bg='white'
-						transform='translate(-50%, -50%)'
-					/>
-					<Text
-						fontWeight='bold'
-						position='absolute'
-						top='50%'
-						left='0'
-						width='max-content'
-						transform='translate(calc(-100% - 4rem), -50%)'
-					>
-						Better Platform
-					</Text>
-					<Box
-						height='7vw'
-						width='7vw'
-						borderRadius='full'
-						border='3px solid'
-						borderColor='brand'
-						position='absolute'
-						top='50%'
-						left='0'
-						bg='white'
-						transform='translate(-50%, -50%)'
-					/>
-					<Text
-						fontWeight='bold'
-						position='absolute'
-						top='50%'
-						left='100%'
-						width='max-content'
-						transform='translate(4rem, -50%)'
-					>
-						More Feedback and Data
-					</Text>
-					<Box
-						height='7vw'
-						width='7vw'
-						borderRadius='full'
-						border='3px solid'
-						borderColor='brand'
-						position='absolute'
-						top='50%'
-						left='100%'
-						bg='white'
-						transform='translate(-50%, -50%)'
-					/>
-				</Box>
-			</Grid>
+					<Box position='absolute' top='0' left='0'>
+						<Heading mb={2}>Ever-Improving</Heading>
+						<Text fontSize='sm'>Machine Learning Algorithm</Text>
+						<Text fontSize='sm'>Improvement cycle based on feedback</Text>
+						<Text fontSize='sm'>Giving employees a voice</Text>
+					</Box>
+
+					<Text fontWeight="bold" gridRow="1 / 2" gridColumn="1 / -1" justifySelf="center">More Oppurtunities Posted</Text>
+					<Text fontWeight="bold" gridRow="1 / -1" gridColumn="1 / 2" justifySelf="end" alignSelf="center" width={{ base: "min-content", md: "max-content" }}>Better Platform</Text>
+					<Text fontWeight="bold" gridRow="1 / -1" gridColumn="-2 / -1" justifySelf="start" alignSelf="center" width={{ base: "min-content", md: "max-content" }}>More Feedback and Data</Text>
+					<Text fontWeight="bold" gridRow="-2 / -1" gridColumn="1 / -1" justifySelf="center">Better Machine Learning Algorithms</Text>
+
+					<Box gridRow="4 / span 14" gridColumn="4 / span 14" {...CircleWithBorderStyle} bg="white"/>
+					<Box gridRow="6 / span 10" gridColumn="6 / span 10" {...CircleStyle} bg="brand" />
+					<Box gridRow="8 / span 6" gridColumn="8 / span 6" {...CircleStyle} bg="white" />
+
+					<Box gridRow="3 / span 2" gridColumn="10 / span 2" {...CircleWithBorderStyle} bg="white" />
+					<Box gridRow="17 / span 2" gridColumn="10 / span 2" {...CircleWithBorderStyle} bg="white" />
+					<Box gridRow="10 / span 2" gridColumn="3 / span 2" {...CircleWithBorderStyle} bg="white" />
+					<Box gridRow="10 / span 2" gridColumn="17 / span 2" {...CircleWithBorderStyle} bg="white" />
+				
+				</Grid>
+			</Box>
 		</Wrapper>
 	);
 };

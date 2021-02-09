@@ -12,7 +12,7 @@ import { Improving } from '../components/Improving';
 import { Footer } from '../components/Footer';
 
 const Index = () => (
-	<Grid height='100vh' alignContent='start'>
+	<Grid height='100vh' alignContent='start' position="relative">
 		<Header />
 		<Hero />
 		<Companies />

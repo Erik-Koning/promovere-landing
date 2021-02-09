@@ -9,29 +9,29 @@ export const Header: React.FC = () => {
 			position='sticky'
 			top='0'
 			zIndex={10000}
-			justifyContent='end'
+			justifyContent={{ base: "center", md: 'end' }}
 			alignItems='center'
 			autoFlow='column'
-			spacing={4}
+			spacing={3}
 			p={4}
 			bg='white'
 			boxShadow='bottom'
 		>
-			<Button onClick={() => scroll.scrollToTop()} variant='ghost' to='' colorScheme='purple' height='2rem'>
+			<Button onClick={() => scroll.scrollToTop()} variant='ghost' color="blueDark" to='' colorScheme='purple' height='2rem'>
 				Home
 			</Button>
 			<Link to='why-promovere' smooth={true}>
-				<Button variant='ghost' colorScheme='purple' height='2rem'>
+				<Button variant='ghost' color="blueDark" colorScheme='purple' height='2rem'>
 					Why Promovere
 				</Button>
 			</Link>
 			<Link to='platform' smooth={true}>
-				<Button variant='ghost' colorScheme='purple' height='2rem'>
+				<Button variant='ghost' color="blueDark" colorScheme='purple' height='2rem'>
 					Platform
 				</Button>
 			</Link>
 			<Link to='booking' smooth={true}>
-				<Button bg='brand' height='2rem'>
+				<Button bg='brand' _hover={{ bg: "brandDark"}} height='2rem'>
 					Book a Demo
 				</Button>
 			</Link>

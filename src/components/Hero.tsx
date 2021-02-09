@@ -20,9 +20,9 @@ const TextAnimation: React.FC = () => {
 export const Hero: React.FC = () => {
 	return (
 		<Wrapper bg='brand'>
-			<VStack pr='40%' py={12} spacing={4} align='start'>
-				<Heading as='h2' size='2xl' lineHeight='1.3'>
-					Leading the new generation of agile <TextAnimation />
+			<VStack py={12} spacing={4} align='start' width="min-content">
+				<Heading as='h2' size='2xl' lineHeight='1.3' width="max-content">
+					Leading the new<br /> generation of agile<br /> <TextAnimation />
 				</Heading>
 				<Text>
 					Promovere is a digital marketplace for businesses that increases employee engagement, rentention and
