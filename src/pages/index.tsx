@@ -4,22 +4,22 @@ import { Grid } from '@chakra-ui/react';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Companies } from '../components/Companies';
-import { WhyPromovere } from '../components/WhyPromovere';
+import { Reasons } from '../components/Reasons';
 import { Platform } from '../components/Platform';
 import { Booking } from '../components/Booking';
 import { Facts } from '../components/Facts';
-import { Improving } from '../components/Improving';
+import { Solution } from '../components/Solution';
 import { Footer } from '../components/Footer';
 
 const Index = () => (
-	<Grid height='100vh' alignContent='start' position="relative">
+	<Grid height='100%' alignContent='start' position="relative">
 		<Header />
 		<Hero />
 		<Companies />
 		<Facts />
-		<WhyPromovere />
+		<Reasons />
 		<Platform />
-		<Improving />
+		<Solution />
 		<Booking />
 		<Footer />
 	</Grid>

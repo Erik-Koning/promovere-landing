@@ -8,7 +8,7 @@ interface FactItemProps {
 }
 
 const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => (
-	<Grid justifyItems='center' templateRows="50% 50%" width="100%" maxWidth="20rem" gap={2}>
+	<Grid justifyItems='center' templateRows="50% 50%" width="100%" maxWidth="16rem" gap={2}>
 		<Image width="100%" src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
 		<Heading size='2xl' gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
 			{stat}

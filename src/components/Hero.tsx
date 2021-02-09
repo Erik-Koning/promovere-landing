@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Heading, Text, VStack } from '@chakra-ui/react';
+import { Button, Heading, Link, Text, VStack } from '@chakra-ui/react';
 import TextLoop from 'react-text-loop';
 import { Wrapper } from './Wrapper';
 
@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
 					Promovere is a digital marketplace for businesses that increases employee engagement, rentention and
 					growth
 				</Text>
-				<Button bg='white'>Learn More</Button>
+				<Button as={Link} bg="white" href="https://www.google.com" isExternal>Learn More</Button>
 			</VStack>
 		</Wrapper>
 	);

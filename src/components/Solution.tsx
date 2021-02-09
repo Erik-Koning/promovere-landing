@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
-export const Improving: React.FC = () => {
+export const Solution: React.FC = () => {
 
 	const CircleStyle = {
 		width: "100%",

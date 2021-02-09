@@ -74,7 +74,7 @@ export const Booking: React.FC = () => {
 					<Input 
 						borderColor='gray.400' 
 						type='text' 
-						placeholder='Name' 
+						placeholder='Full Name' 
 						gridColumn='1 / -1'
 						value={name} 
 						onChange={(e) => setName(e.target.value)} 
@@ -133,26 +133,27 @@ export const Booking: React.FC = () => {
 					/>
 					{
 					sent ? 
-						<Center bg="white" height="2.4rem" borderRadius="md" boxShadow="base" >
+						<Center bg="gray.400" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
 							<Text mr={2}>Sent</Text>
 							<CheckCircleIcon color="green.400" mt="1px" />
 						</Center> :
 					sending ?	
-						<Center bg="white" height="2.4rem" borderRadius="md" boxShadow="base" >
+						<Center bg="gray.400" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
 							<Text mr={2}>Sending</Text>
-							<Spinner size="sm" />
+							<Spinner size="sm" color="white" mt="1px" />
 						</Center> :
 						<Input 
 							type="submit" 
 							height="2.4rem" 
 							value="Send" 
-							bg="white" 
+							bg="gray.400" 
+							color="white" 
 							borderRadius="md" 
 							boxShadow="base" 
 							border="none" 
 							cursor="pointer"
 							_hover={{
-								bg: "gray.100"
+								bg: "gray.500"
 							}}
 						/> 
 					}
