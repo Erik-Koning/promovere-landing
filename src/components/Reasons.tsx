@@ -115,7 +115,7 @@ export const Reasons: React.FC = () => {
 				</Heading>
 			</Wrapper>
 			{ REASONS_DATA.map((section, index) => (
-				<ReasonItem number={index + 1} title={section.title} reasons={section.reasons} isOdd={index % 2 === 1} />
+				<ReasonItem number={index + 1} key={index} title={section.title} reasons={section.reasons} isOdd={index % 2 === 1} />
 			))}
 		</Grid>
 	);
