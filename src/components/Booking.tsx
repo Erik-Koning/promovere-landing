@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import emailjs from "emailjs-com"
 import { Box, Center, Grid, Heading, Input, Select, Spinner, Text, Textarea, useToast } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
-import { CheckCircleIcon } from '@chakra-ui/icons';
 
 const serviceID = process.env.NEXT_PUBLIC_SERVICE as string
 const templateID = process.env.NEXT_PUBLIC_TEMPLATE as string
