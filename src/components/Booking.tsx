@@ -17,6 +17,7 @@ export const Booking: React.FC = () => {
 	const [email, setEmail] = useState("")
 	const [num_of_employees, setNumOfEmployees] = useState("")
 	const [industry, setIndustry] = useState("")
+	const [industryText, setIndustryText] = useState("")
 	const [notes, setNotes] = useState("")
 
 	const [sending, setSending] = useState(false)
@@ -30,7 +31,7 @@ export const Booking: React.FC = () => {
 			company, 
 			email, 
 			num_of_employees, 
-			industry, 
+			industry: industry === "Other" ? industryText : industry, 
 			notes
 		};
 		try {
@@ -123,6 +124,17 @@ export const Booking: React.FC = () => {
 						<option>Clothing</option>
 						<option>Other</option>
 					</Select>
+					{industry === "Other" && 
+						<Input 
+							borderColor='gray.400' 
+							type='text' 
+							placeholder='Specify Industry' 
+							gridColumn='1 / -1' 
+							value={industryText} 
+							onChange={(e) => setIndustryText(e.target.value)} 
+							required 
+						/>
+					}
 					<Textarea 
 						rows={6} 
 						placeholder='Notes' 
@@ -130,15 +142,15 @@ export const Booking: React.FC = () => {
 						gridColumn='1 / -1' 
 						value={notes} 
 						onChange={(e) => setNotes(e.target.value)} 
+						resize="none"
 					/>
 					{
 					sent ? 
-						<Center bg="gray.400" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
-							<Text mr={2}>Sent</Text>
-							<CheckCircleIcon color="green.400" mt="1px" />
+						<Center bg="gray.500" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
+							<Text>Sent</Text>
 						</Center> :
 					sending ?	
-						<Center bg="gray.400" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
+						<Center bg="gray.500" color="white" height="2.4rem" borderRadius="md" boxShadow="base" >
 							<Text mr={2}>Sending</Text>
 							<Spinner size="sm" color="white" mt="1px" />
 						</Center> :

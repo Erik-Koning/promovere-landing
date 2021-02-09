@@ -6,7 +6,7 @@ export const Companies: React.FC = () => {
 	return (
 		<Wrapper>
 			<Grid templateColumns={{ base: "1fr", lg: 'max-content 1fr' }} alignItems='center' rowGap={6} columnGap={12} py={12}>
-				<Heading as='h3' textAlign={{ base: "center", lg: "unset" }}>As featured in</Heading>
+				<Heading as='h3' textAlign={{ base: "center", lg: "unset" }}>As featured in:</Heading>
 				<Grid justifyItems='center'>
 					<HStack spacing={4}>
 						<Image width={{ base: "18vw", lg: "16vw" }} src='/img/sponsors/ddqic.jpg' />

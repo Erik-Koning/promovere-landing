@@ -26,5 +26,8 @@ $ npm run dev
 - Hero Button Link
 - Company Image Links?
 - Why Promovere Graphics and Text
-- Set correct Email JS credentials
+- Confirm Options for Booking dropdowns
 - Footer Social Links
+
+- Set correct Email JS credentials
+- Hand off Vercel deployment

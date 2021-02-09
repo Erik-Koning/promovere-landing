@@ -23,10 +23,10 @@ export const Facts: React.FC = () => {
 	return (
 		<Grid mb={16}>
 			<Wrapper bg='brand'>
-				<Box pt={16} pb={6}>
+				<Grid pt={16} pb={6} gap={2}>
 					<Heading>The Facts</Heading>
 					<Text>Our achievement in the journey depicted in numbers</Text>
-				</Box>
+				</Grid>
 			</Wrapper>
 			<Grid templateColumns='1fr 1fr' templateRows='1fr 1fr'>
 				<Box gridRow='1 / 2' gridColumn='1 / -1' bg='brand' />
