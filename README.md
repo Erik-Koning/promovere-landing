@@ -28,6 +28,7 @@ $ npm run dev
 - Why Promovere Graphics and Text
 - Confirm Options for Booking dropdowns
 - Footer Social Links
+- Add Favicon
 
 - Set correct Email JS credentials
 - Hand off Vercel deployment
