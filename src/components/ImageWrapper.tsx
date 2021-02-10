@@ -12,7 +12,7 @@ interface ImageWrapperProps extends HTMLChakraProps<'img'>, ThemingProps {
 export const ImageWrapper: React.FC<ImageWrapperProps> = ({ src, alt, priority, ...props }) => {
 	return (
 		<Box position='relative' {...props}>
-			<Image src={src} alt={alt} layout='fill' objectFit='cover' priority={priority} />
+			<Image src={src} alt={alt} layout='fill' objectFit='contain' priority={priority} />
 		</Box>
 	);
 };

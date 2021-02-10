@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button, Heading, Link, Text, VStack } from '@chakra-ui/react';
+import { Button, Heading, Text, VStack } from '@chakra-ui/react';
 import TextLoop from 'react-text-loop';
 import { Wrapper } from './Wrapper';
+import { Link } from 'react-scroll';
 
 const TextAnimation: React.FC = () => {
-	const words = ['business', 'people', 'groups'];
+	const words = ['businesses', 'employees', 'managers', 'people'];
 
 	return (
 		<TextLoop interval={2000}>
@@ -28,7 +29,11 @@ export const Hero: React.FC = () => {
 					Promovere is a digital marketplace for businesses that increases employee engagement, rentention and
 					growth
 				</Text>
-				<Button as={Link} bg="white" href="https://www.google.com" isExternal>Learn More</Button>
+				<Link to='booking' smooth={true}>
+					<Button bg='white' boxShadow="base" _hover={{ bg: "white", boxShadow: "lg"}}>
+						Learn More
+					</Button>
+				</Link>
 			</VStack>
 		</Wrapper>
 	);

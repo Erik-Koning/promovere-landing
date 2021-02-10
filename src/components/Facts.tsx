@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Heading, Image, Text } from '@chakra-ui/react';
+import { Box, Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
 interface FactItemProps {
@@ -7,17 +7,22 @@ interface FactItemProps {
 	subText: string;
 }
 
-const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => (
-	<Grid justifyItems='center' templateRows="50% 50%" width="100%" maxWidth="16rem" gap={2}>
-		<Image width="100%" src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
-		<Heading size='2xl' gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
-			{stat}
-		</Heading>
-		<Text gridRow='2 / 3' gridColumn='1 / 3' width="calc(100% - 2rem)" textAlign="center">
-			{subText}
-		</Text>
-	</Grid>
-);
+const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
+
+	const headingSize = useBreakpointValue({ base: "xl", xs: "2xl" })
+
+	return (
+		<Grid justifyItems='center' templateRows={{ base: "45% 55%", xs: "50% 50%" }} width="100%" maxWidth="16rem" gap={{ base: 0, xs: 2 }}>
+			<Image width="100%" src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
+			<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
+				{stat}
+			</Heading>
+			<Text gridRow='2 / 3' fontSize={{ base: "xs", xs: "md" }} gridColumn='1 / 3' width="calc(100% - 2rem)" textAlign="center">
+				{subText}
+			</Text>
+		</Grid>
+	)
+}
 
 export const Facts: React.FC = () => {
 	return (
@@ -32,7 +37,7 @@ export const Facts: React.FC = () => {
 				<Box gridRow='1 / 2' gridColumn='1 / -1' bg='brand' />
 				<Box gridRow='2 / 3' gridColumn='1 / -1' bg='white' />
 				<Wrapper gridRow='1 / -1' gridColumn='1 / -1'>
-					<Grid maxWidth="70rem" templateColumns='repeat(3, 1fr)' justifyContent='space-between' gap={4} alignContent='center' mx="auto">
+					<Grid maxWidth="70rem" templateColumns='repeat(3, 1fr)' justifyContent='space-between' gap={{ base: 2, md: 4 }} alignContent='center' mx="auto">
 						<FactItem stat='52%' subText='Switch jobs in their lifetime' />
 						<FactItem stat='15x' subText='Unengaged at work' />
 						<FactItem stat='1/2' subText='Expensive to Replace' />

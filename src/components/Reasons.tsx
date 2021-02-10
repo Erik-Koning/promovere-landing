@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Grid, Heading, Text } from '@chakra-ui/react';
+import { Grid, Heading, Text } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
+import { ImageWrapper } from './ImageWrapper';
 
 export const REASONS_DATA = [
 	{
@@ -18,7 +19,11 @@ export const REASONS_DATA = [
 				title: "Headline",
 				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
 			}
-		]
+		],
+		img: {
+			src: "/img/reasons/growth.png",
+			alt: "Rocket ship on graph",
+		}
 	},
 	{
 		title: "For Managers",
@@ -35,7 +40,11 @@ export const REASONS_DATA = [
 				title: "Headline",
 				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
 			}
-		]
+		],
+		img: {
+			src: "/img/reasons/optimize.png",
+			alt: "Magnifying Glass",
+		}
 	},
 	{
 		title: "For Businesses",
@@ -52,7 +61,11 @@ export const REASONS_DATA = [
 				title: "Headline",
 				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
 			}
-		]
+		],
+		img: {
+			src: "/img/reasons/building.png",
+			alt: "Building",
+		}
 	},
 ]
 
@@ -64,10 +77,14 @@ interface ReasonItemProps {
 		title: string;
 		subText: string;
 	}[];
+	img: {
+		src: string;
+		alt: string;
+	}
 }
 
-const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons }) => {
-	const Graphic = () => <Box />;
+const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, img }) => {
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} />;
 
 	const ListNumber = () => (
 		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
@@ -97,7 +114,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons }
 
 	return (
 		<Wrapper bg={isOdd ? 'brand' : 'none'}>
-			<Grid justifyContent='space-between' templateColumns='50% 50%' py={6} gap={4} bg={isOdd ? 'brand' : 'white'}>
+			<Grid justifyContent='space-between' templateColumns={{ base: "1fr", md: '50% 50%' }} templateRows={{ base: "max-content 40vh", md: '1fr' }} py={6} gap={4} bg={isOdd ? 'brand' : 'white'}>
 				{ !isOdd && <Info /> }
 				<Graphic />
 				{ isOdd && <Info /> }
@@ -115,7 +132,7 @@ export const Reasons: React.FC = () => {
 				</Heading>
 			</Wrapper>
 			{ REASONS_DATA.map((section, index) => (
-				<ReasonItem number={index + 1} key={index} title={section.title} reasons={section.reasons} isOdd={index % 2 === 1} />
+				<ReasonItem number={index + 1} key={index} {...section} isOdd={index % 2 === 1} />
 			))}
 		</Grid>
 	);

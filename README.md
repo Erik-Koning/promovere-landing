@@ -22,11 +22,8 @@ $ npm run dev
 ```
 
 ## To Complete
-- Mobile Designs
-- Hero Button Link
-- Company Image Links?
-- Why Promovere Graphics and Text
-- Confirm Options for Booking dropdowns
+- Why Promovere Text
+- Confirm Options for Booking Dropdowns
 - Footer Social Links
 - Add Favicon
 
