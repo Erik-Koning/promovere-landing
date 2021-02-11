@@ -38,4 +38,4 @@ $ npm run dev
 -  Fork Github repo
 -  Set correct Email JS credentials
 -  Hand off Vercel deployment
--  Connect Vercel deployment to
+-  Connect Vercel deployment to domain
