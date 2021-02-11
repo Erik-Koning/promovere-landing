@@ -15,12 +15,13 @@ export const Header: React.FC = () => {
 			zIndex={10000}
 			bg='white'
 		>
-			<Grid templateColumns="1fr max-content" py={3} gap={4}>
-				<ImageWrapper width={{ base: "20vw", md: "10vw"}} minWidth="6rem" height="100%" display={{ base: "block", sm: "none", md: "block"}} src="/img/logo.png" alt="promovere logo" priority />
+			<Grid templateColumns="1fr max-content" gap={4}>
+				<ImageWrapper width={{ base: "20vw", md: "10vw", lg: "8rem" }} minWidth="6rem" height="100%" display={{ base: "block", sm: "none", md: "block"}} src="/img/logo.png" alt="promovere logo" priority />
 				<ImageWrapper width="4vw" height="100%" display={{ base: "none", sm: "block", md: "none"}} src="/img/logo-small.png" alt="promovere logo" priority />
 				<SimpleGrid
 					autoFlow='column'
 					spacing={{base: 2, md: 4 }}
+					py={3}
 				>
 					<Button onClick={() => scroll.scrollToTop()} display={{ base: "none", sm: "inline-flex"}} variant='ghost' color="blueDark" colorScheme='purple' height='2rem'>
 						Home

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Heading, Image, SlideFade, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 import { useInView } from 'react-intersection-observer';
 interface FactItemProps {
@@ -12,30 +12,31 @@ const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
 	const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true })
  
 	return (
-		<SlideFade in={inView} offsetY="20px">
-			<Grid
-				justifyItems='center'
-				templateRows={{ base: '45% 55%', xs: '50% 50%' }}
-				width='100%'
-				maxWidth='16rem'
-				gap={{ base: 0, xs: 2 }}
-				ref={ref}
-			>
-				<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
-				<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
-					{stat}
-				</Heading>
-				<Text
-					gridRow='2 / 3'
-					fontSize={{ base: 'xs', sm: 'md' }}
-					gridColumn='1 / 3'
-					width='calc(100% - 2rem)'
-					textAlign='center'
-					>
-					{subText}
-				</Text>
-			</Grid>
-		</SlideFade>
+		<Grid
+			justifyItems='center'
+			templateRows={{ base: '45% 55%', xs: '50% 50%' }}
+			width='100%'
+			maxWidth='16rem'
+			gap={{ base: 0, xs: 2 }}
+			ref={ref}
+			opacity={0}
+			transform="translateY(10px)"
+			animation={ inView ? "fadeUp 0.6s ease-in forwards" : "" }
+		>
+			<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
+			<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
+				{stat}
+			</Heading>
+			<Text
+				gridRow='2 / 3'
+				fontSize={{ base: 'xs', sm: 'md' }}
+				gridColumn='1 / 3'
+				width='calc(100% - 2rem)'
+				textAlign='center'
+				>
+				{subText}
+			</Text>
+		</Grid>
 	);
 };
 
