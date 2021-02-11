@@ -5,69 +5,69 @@ import { ImageWrapper } from './ImageWrapper';
 
 export const REASONS_DATA = [
 	{
-		title: "For Employees",
+		title: 'For Employees',
 		reasons: [
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
-			}
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+			},
 		],
 		img: {
-			src: "/img/reasons/growth.png",
-			alt: "Rocket ship on graph",
-		}
+			src: '/img/reasons/growth.png',
+			alt: 'Rocket ship on graph',
+		},
 	},
 	{
-		title: "For Managers",
+		title: 'For Managers',
 		reasons: [
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
-			}
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+			},
 		],
 		img: {
-			src: "/img/reasons/optimize.png",
-			alt: "Magnifying Glass",
-		}
+			src: '/img/reasons/optimize.png',
+			alt: 'Magnifying Glass',
+		},
 	},
 	{
-		title: "For Businesses",
+		title: 'For Businesses',
 		reasons: [
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
 			},
 			{
-				title: "Headline",
-				subText: "Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat."
-			}
+				title: 'Headline',
+				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+			},
 		],
 		img: {
-			src: "/img/reasons/building.png",
-			alt: "Building",
-		}
+			src: '/img/reasons/building.png',
+			alt: 'Building',
+		},
 	},
-]
+];
 
 interface ReasonItemProps {
 	isOdd?: boolean;
@@ -80,11 +80,11 @@ interface ReasonItemProps {
 	img: {
 		src: string;
 		alt: string;
-	}
+	};
 }
 
 const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, img }) => {
-	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} />;
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', md: 'block' }} />;
 
 	const ListNumber = () => (
 		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
@@ -95,8 +95,13 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, 
 	const Info = () => (
 		<Grid templateColumns={isOdd ? 'max-content 1fr' : '1fr'}>
 			{!isOdd && <ListNumber />}
-			<Grid templateColumns='max-content 1fr' gridColumn={isOdd ? '1 / -1' : '2 / 3'} alignSelf='end' gap={2}>
-				<Heading pb={2} size='lg' alignSelf='end'>
+			<Grid
+				templateColumns={{ base: isOdd ? '1fr max-content' : 'max-content 1fr', md: 'max-content 1fr' }}
+				gridColumn={isOdd ? '1 / -1' : '2 / 3'}
+				alignSelf='end'
+				gap={2}
+			>
+				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: isOdd ? 'end' : 'start', md: 'start' }}>
 					{title}
 				</Heading>
 				{isOdd && <ListNumber />}
@@ -114,10 +119,17 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, 
 
 	return (
 		<Wrapper bg={isOdd ? 'brand' : 'none'}>
-			<Grid justifyContent='space-between' templateColumns={{ base: "1fr", md: '50% 50%' }} templateRows={{ base: "max-content 40vh", md: '1fr' }} py={6} gap={4} bg={isOdd ? 'brand' : 'white'}>
-				{ !isOdd && <Info /> }
+			<Grid
+				justifyContent='space-between'
+				templateColumns={{ base: '1fr', md: '60% 40%', lg: '50% 50%' }}
+				templateRows='1fr'
+				py={6}
+				gap={4}
+				bg={isOdd ? 'brand' : 'white'}
+			>
+				{!isOdd && <Info />}
 				<Graphic />
-				{ isOdd && <Info /> }
+				{isOdd && <Info />}
 			</Grid>
 		</Wrapper>
 	);
@@ -131,7 +143,7 @@ export const Reasons: React.FC = () => {
 					Why Promovere
 				</Heading>
 			</Wrapper>
-			{ REASONS_DATA.map((section, index) => (
+			{REASONS_DATA.map((section, index) => (
 				<ReasonItem number={index + 1} key={index} {...section} isOdd={index % 2 === 1} />
 			))}
 		</Grid>
