@@ -76,22 +76,22 @@ interface ListNumberProps {
 }
 
 const ListNumber: React.FC<ListNumberProps> = ({ number }) => {
-	const [ref, inView] = useInView({ threshold: 1, triggerOnce: true })
-	const { start, countUp } = useCountUp({ start: 0, end: number, duration: 3, delay: 1.5 })
+	const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
+	const { start, countUp } = useCountUp({ start: 0, end: number, duration: 3, delay: 1.5 });
 
 	useEffect(() => {
-		if (inView) start()
-	}, [inView])
+		if (inView) start();
+	}, [inView]);
 
 	return (
 		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1' ref={ref}>
 			{countUp}.
 		</Text>
-	)
-}
+	);
+};
 
 interface ReasonItemProps {
-	isOdd?: boolean;
+	isEven?: boolean;
 	number: number;
 	title: string;
 	reasons: {
@@ -104,24 +104,31 @@ interface ReasonItemProps {
 	};
 }
 
-const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, img }) => {
-	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', md: 'block' }} />;
+const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons, img }) => {
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} />;
+
+	if (isEven) console.log({ title });
 
 	const Info = () => (
-		<Grid templateColumns={isOdd ? 'max-content 1fr' : '1fr'} >
-			{!isOdd && <ListNumber number={number} />}
+		<Grid
+			templateColumns={{
+				base: isEven ? 'max-content 1fr' : 'max-content 1fr',
+				md: isEven ? 'max-content 1fr' : '1fr',
+			}}
+		>
+			{!isEven && <ListNumber number={number} />}
 			<Grid
-				templateColumns={{ base: isOdd ? '1fr max-content' : 'max-content 1fr', md: 'max-content 1fr' }}
-				gridColumn={isOdd ? '1 / -1' : '2 / 3'}
+				templateColumns={{ base: isEven ? '1fr max-content' : 'max-content 1fr', md: 'max-content 1fr' }}
+				gridColumn={isEven ? '1 / -1' : '2 / 3'}
 				alignSelf='end'
 				gap={2}
 			>
-				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: isOdd ? 'end' : 'start', md: 'start' }}>
+				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: isEven ? 'end' : 'start', md: 'start' }}>
 					{title}
 				</Heading>
-				{isOdd && <ListNumber number={number} />}
+				{isEven && <ListNumber number={number} />}
 			</Grid>
-			<Grid gap={6} gridColumn='2 / 3' mt={4}>
+			<Grid gap={6} gridColumn={{ base: '1 / 3', md: '2 / 3' }} mt={4}>
 				{reasons.map((reason, index) => (
 					<Grid key={index}>
 						<Heading size='md'>{reason.title}</Heading>
@@ -133,18 +140,18 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, 
 	);
 
 	return (
-		<Wrapper bg={isOdd ? 'brand' : 'none'}>
+		<Wrapper bg={isEven ? 'brand' : 'none'}>
 			<Grid
 				justifyContent='space-between'
-				templateColumns={{ base: '1fr', md: '60% 40%', lg: '50% 50%' }}
+				templateColumns={{ base: '1fr', sm: '60% 40%', lg: '50% 50%' }}
 				templateRows='1fr'
 				py={6}
 				gap={4}
-				bg={isOdd ? 'brand' : 'white'}
+				bg={isEven ? 'brand' : 'white'}
 			>
-				{!isOdd && <Info />}
+				{!isEven && <Info />}
 				<Graphic />
-				{isOdd && <Info />}
+				{isEven && <Info />}
 			</Grid>
 		</Wrapper>
 	);
@@ -159,7 +166,7 @@ export const Reasons: React.FC = () => {
 				</Heading>
 			</Wrapper>
 			{REASONS_DATA.map((section, index) => (
-				<ReasonItem number={index + 1} key={index} {...section} isOdd={index % 2 === 1} />
+				<ReasonItem number={index + 1} key={index} {...section} isEven={index % 2 === 1} />
 			))}
 		</Grid>
 	);
