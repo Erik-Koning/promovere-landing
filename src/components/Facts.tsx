@@ -1,37 +1,41 @@
 import React from 'react';
-import { Box, Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Grid, Heading, Image, SlideFade, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
-
+import { useInView } from 'react-intersection-observer';
 interface FactItemProps {
 	stat: string;
 	subText: string;
 }
 
 const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
-	const headingSize = useBreakpointValue({ base: 'xl', xs: '2xl' });
-
+	const headingSize = useBreakpointValue({ base: 'lg', xs: "xl", sm: '2xl' });
+	const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true })
+ 
 	return (
-		<Grid
-			justifyItems='center'
-			templateRows={{ base: '45% 55%', xs: '50% 50%' }}
-			width='100%'
-			maxWidth='16rem'
-			gap={{ base: 0, xs: 2 }}
-		>
-			<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
-			<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
-				{stat}
-			</Heading>
-			<Text
-				gridRow='2 / 3'
-				fontSize={{ base: 'xs', xs: 'md' }}
-				gridColumn='1 / 3'
-				width='calc(100% - 2rem)'
-				textAlign='center'
+		<SlideFade in={inView} offsetY="20px">
+			<Grid
+				justifyItems='center'
+				templateRows={{ base: '45% 55%', xs: '50% 50%' }}
+				width='100%'
+				maxWidth='16rem'
+				gap={{ base: 0, xs: 2 }}
+				ref={ref}
 			>
-				{subText}
-			</Text>
-		</Grid>
+				<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
+				<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
+					{stat}
+				</Heading>
+				<Text
+					gridRow='2 / 3'
+					fontSize={{ base: 'xs', sm: 'md' }}
+					gridColumn='1 / 3'
+					width='calc(100% - 2rem)'
+					textAlign='center'
+					>
+					{subText}
+				</Text>
+			</Grid>
+		</SlideFade>
 	);
 };
 
@@ -52,7 +56,7 @@ export const Facts: React.FC = () => {
 						maxWidth='70rem'
 						templateColumns='repeat(3, 1fr)'
 						justifyContent='space-between'
-						gap={{ base: 2, md: 4 }}
+						gap={{ base: 0, xs: 2, md: 4 }}
 						alignContent='center'
 						mx='auto'
 					>

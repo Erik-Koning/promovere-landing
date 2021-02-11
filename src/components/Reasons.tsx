@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid, Heading, Text } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 import { ImageWrapper } from './ImageWrapper';
+import { useInView } from 'react-intersection-observer';
+import { useCountUp } from 'react-countup';
 
 export const REASONS_DATA = [
 	{
@@ -69,6 +71,25 @@ export const REASONS_DATA = [
 	},
 ];
 
+interface ListNumberProps {
+	number: number;
+}
+
+const ListNumber: React.FC<ListNumberProps> = ({ number }) => {
+	const [ref, inView] = useInView({ threshold: 1, triggerOnce: true })
+	const { start, countUp } = useCountUp({ start: 0, end: number, duration: 3, delay: 1.5 })
+
+	useEffect(() => {
+		if (inView) start()
+	}, [inView])
+
+	return (
+		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1' ref={ref}>
+			{countUp}.
+		</Text>
+	)
+}
+
 interface ReasonItemProps {
 	isOdd?: boolean;
 	number: number;
@@ -86,15 +107,9 @@ interface ReasonItemProps {
 const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, img }) => {
 	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', md: 'block' }} />;
 
-	const ListNumber = () => (
-		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
-			{number}.
-		</Text>
-	);
-
 	const Info = () => (
-		<Grid templateColumns={isOdd ? 'max-content 1fr' : '1fr'}>
-			{!isOdd && <ListNumber />}
+		<Grid templateColumns={isOdd ? 'max-content 1fr' : '1fr'} >
+			{!isOdd && <ListNumber number={number} />}
 			<Grid
 				templateColumns={{ base: isOdd ? '1fr max-content' : 'max-content 1fr', md: 'max-content 1fr' }}
 				gridColumn={isOdd ? '1 / -1' : '2 / 3'}
@@ -104,7 +119,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isOdd, number, title, reasons, 
 				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: isOdd ? 'end' : 'start', md: 'start' }}>
 					{title}
 				</Heading>
-				{isOdd && <ListNumber />}
+				{isOdd && <ListNumber number={number} />}
 			</Grid>
 			<Grid gap={6} gridColumn='2 / 3' mt={4}>
 				{reasons.map((reason, index) => (

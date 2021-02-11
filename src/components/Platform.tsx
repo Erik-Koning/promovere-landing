@@ -8,7 +8,7 @@ export const Platform: React.FC = () => {
 				id='platform'
 				py={10}
 				gap={{ base: 4, md: 8 }}
-				tempalteColumns={{ base: 'max-content 1fr', sm: 'max-content 1fr' }}
+				templateColumns='max-content 1fr'
 			>
 				<Heading
 					as='h2'

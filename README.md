@@ -26,12 +26,6 @@ $ npm run dev
 
 -  Fill in content text
 -  Confirm options for "# of Employees" and "Industry" dropdowns
--  Footer Social Links
--  Add Favicon
--  Clarify animation for circle component
-   -  What was suggested sounded complex and unclear of how to handle text
-   -  See Figma comments
--  Add Promovere Logo somewhere?
 
 ## Hand Off
 
