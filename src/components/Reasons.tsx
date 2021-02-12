@@ -8,16 +8,16 @@ export const REASONS_DATA = [
 		title: 'For Employees',
 		reasons: [
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Satisfaction',
+				subText: 'Connecting projects to employees that balance their skill qualifications, and skill growth aspirations.',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Retention',
+				subText: 'Keeping employees engaged, and .',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Growth',
+				subText: 'Identifing projects that match your growth aspirations.',
 			},
 		],
 		img: {
