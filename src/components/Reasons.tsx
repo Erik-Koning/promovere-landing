@@ -126,7 +126,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 		<Wrapper bg={isEven ? 'brand' : 'none'}>
 			<Grid
 				justifyContent='space-between'
-				templateColumns={{ base: '1fr', sm: '60% 40%', lg: '50% 50%' }}
+				templateColumns={{ base: '1fr', sm: isEven ? '60% 40%' : "40% 60%", lg: '50% 50%' }}
 				templateRows='1fr'
 				py={6}
 				gap={4}
