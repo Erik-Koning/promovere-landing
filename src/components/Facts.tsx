@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 import { useInView } from 'react-intersection-observer';
+import { useCountUp } from 'react-countup';
+
 interface FactItemProps {
-	stat: string;
-	subText: string;
+	text: string;
+	denominator?: number;
+	statSymbol?: string;
+	numerator?: number;
+	isFraction?: boolean;
 }
 
-const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
-	const headingSize = useBreakpointValue({ base: 'lg', xs: "xl", sm: '2xl' });
-	const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true })
- 
+const FactItem: React.FC<FactItemProps> = ({ denominator = 0, numerator = 0, statSymbol, text, isFraction }) => {
+	const headingSize = useBreakpointValue({ base: 'lg', xs: 'xl', sm: '2xl' });
+	const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true });
+
+	const { start: startDenominator, countUp: countUpDenominator } = useCountUp({
+		start: 0,
+		end: denominator,
+	});
+
+	const { start: startNumerator, countUp: countUpNumerator } = useCountUp({
+		start: 0,
+		end: numerator,
+	});
+
+	useEffect(() => {
+		if (inView) {
+			startDenominator();
+			startNumerator();
+		}
+	}, [inView]);
+
 	return (
 		<Grid
 			justifyItems='center'
@@ -20,12 +42,13 @@ const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
 			gap={{ base: 0, xs: 2 }}
 			ref={ref}
 			opacity={0}
-			transform="translateY(10px)"
-			animation={ inView ? "fadeUp 0.6s ease-in forwards" : "" }
+			transform='translateY(10px)'
+			animation={inView ? 'fadeUp 0.6s ease-in forwards' : ''}
 		>
 			<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
 			<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
-				{stat}
+				{isFraction ? `${countUpNumerator}/${countUpDenominator}` : countUpNumerator}
+				{statSymbol}
 			</Heading>
 			<Text
 				gridRow='2 / 3'
@@ -33,8 +56,8 @@ const FactItem: React.FC<FactItemProps> = ({ stat, subText }) => {
 				gridColumn='1 / 3'
 				width='calc(100% - 2rem)'
 				textAlign='center'
-				>
-				{subText}
+			>
+				{text}
 			</Text>
 		</Grid>
 	);
@@ -61,9 +84,9 @@ export const Facts: React.FC = () => {
 						alignContent='center'
 						mx='auto'
 					>
-						<FactItem stat='52%' subText='Switch jobs in their lifetime' />
-						<FactItem stat='15x' subText='Unengaged at work' />
-						<FactItem stat='1/2' subText='Expensive to Replace' />
+						<FactItem numerator={52} statSymbol='%' text='Switch jobs in their lifetime' />
+						<FactItem numerator={15} statSymbol='x' text='Unengaged at work' />
+						<FactItem numerator={1} denominator={2} text='Expensive to Replace' isFraction />
 					</Grid>
 				</Wrapper>
 			</Grid>
