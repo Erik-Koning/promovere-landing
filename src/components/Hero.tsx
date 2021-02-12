@@ -5,7 +5,7 @@ import { Wrapper } from './Wrapper';
 import { Link } from 'react-scroll';
 
 const TextAnimation: React.FC = () => {
-	const words = ['businesses', 'employees', 'managers', 'people'];
+	const words = ['businesses.', 'employees.', 'managers.', 'people.'];
 
 	return (
 		<TextLoop interval={2000}>
