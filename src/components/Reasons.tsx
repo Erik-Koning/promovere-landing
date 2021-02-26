@@ -13,11 +13,11 @@ export const REASONS_DATA = [
 			},
 			{
 				title: 'Retention',
-				subText: 'Keeping employees engaged, and .',
+				subText: 'We intelligently match jobs, mentors, and carreer paths to employees based on their goals, and aspirations.',
 			},
 			{
 				title: 'Growth',
-				subText: 'Identifing projects that match your growth aspirations.',
+				subText: 'Identifing projects that match your growth aspirations, so we can help you develope in the most efficient way possible.',
 			},
 		],
 		img: {
@@ -29,16 +29,16 @@ export const REASONS_DATA = [
 		title: 'For Managers',
 		reasons: [
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Streamlined Communication',
+				subText: 'Communicate opportunities across your organization effortlessly, with one-to-many postings',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Foster Growth',
+				subText: 'A proper system to foster and encourage growth opportunities',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Organization',
+				subText: 'Manage each employees individual career path, goals, and aspirations in one place.',
 			},
 		],
 		img: {
@@ -50,16 +50,16 @@ export const REASONS_DATA = [
 		title: 'For Businesses',
 		reasons: [
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Innovation',
+				subText: 'Enables innovative projects that are internal to your company to be connected effectively with the employees who are passionate about achieving it.',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Employee Retention',
+				subText: 'Employees are happier and more likely to grow within your company.',
 			},
 			{
-				title: 'Headline',
-				subText: 'Lorem ipsum dolor sit amet, consectetur adipscing elit. Mattis et sed nam sem tellus erat.',
+				title: 'Productivity',
+				subText: 'With employees that are more engaged, work quality is improved, and more ambitious work is executed.',
 			},
 		],
 		img: {

@@ -68,8 +68,8 @@ export const Facts: React.FC = () => {
 		<Grid mb={16}>
 			<Wrapper bg='brand'>
 				<Grid pt={16} pb={6} gap={2}>
-					<Heading>The Facts</Heading>
-					<Text>Our achievement in the journey depicted in numbers</Text>
+					<Heading>The Facts of Employees at Work</Heading>
+					<Text>our mission is to improve these values.</Text>
 				</Grid>
 			</Wrapper>
 			<Grid templateColumns='1fr 1fr' templateRows='1fr 1fr'>
@@ -84,9 +84,9 @@ export const Facts: React.FC = () => {
 						alignContent='center'
 						mx='auto'
 					>
-						<FactItem numerator={52} statSymbol='%' text='Switch jobs in their lifetime' />
-						<FactItem numerator={15} statSymbol='x' text='Unengaged at work' />
-						<FactItem numerator={1} denominator={2} text='Expensive to Replace' isFraction />
+						<FactItem numerator={52} statSymbol='%' text='Unengaged at work' />
+						<FactItem numerator={15} statSymbol='x' text='Job switches in a lifetime' />
+						<FactItem numerator={1} denominator={2} text='Of an employees salary to find a replacement' isFraction />
 					</Grid>
 				</Wrapper>
 			</Grid>

@@ -67,7 +67,7 @@ export const Booking: React.FC = () => {
 					<Heading mb={{ base: 0, md: 4 }} as='h2' textAlign={{ base: 'center', md: 'start' }}>
 						Book a Demo
 					</Heading>
-					<Text textAlign={{ base: 'center', md: 'start' }}>Let's Set Up A Consultation!</Text>
+					<Text textAlign={{ base: 'center', md: 'start' }}>Looking forward to connecting!</Text>
 				</Box>
 				<Grid as='form' templateColumns='1fr 1fr' gap={4} onSubmit={sendEmail}>
 					<Input

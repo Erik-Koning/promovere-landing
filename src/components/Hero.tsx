@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
 					Leading the new<br /> generation of agile<br /> <TextAnimation />
 				</Heading>
 				<Text>
-					Promovere is a digital marketplace for businesses that increases employee engagement, rentention and
+					Promovere is a digital marketplace for businesses that increases employee engagement, retention and
 					growth
 				</Text>
 				<Link to='booking' smooth={true}>

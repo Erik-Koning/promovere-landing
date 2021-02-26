@@ -36,9 +36,9 @@ export const Platform: React.FC = () => {
 					<br /> Driven Design
 				</Heading>
 				<Text gridColumn={{ base: '1 / 3', sm: '2 / 3' }} gridRow='3/4'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum diam orci pretium a pharetra,
-					feugiat cursus. Dictumst risus, sem egestas odio cras adipiscing vulputate. Nisi, risus in suscipit non.
-					Non commodo volutpat, pharetra, vel.
+				Increase employee engagement, retention and growth with 3 key features.
+				Primarily an internal job marketplace powered by machine learning to match
+				highly relevant jobs with employees, career pathing, and mentorship matching. 
 				</Text>
 			</Grid>
 		</Wrapper>

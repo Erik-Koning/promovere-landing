@@ -21,3 +21,9 @@ Run Next JS development server
 ```bash
 $ npm run dev
 ```
+
+Deploying with Vercel
+
+```bash
+$  git push
+$  //vercel picks up the changes
