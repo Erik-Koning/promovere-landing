@@ -36,7 +36,7 @@ export const Platform: React.FC = () => {
 					<br /> Driven Design
 				</Heading>
 				<Text gridColumn={{ base: '1 / 3', sm: '2 / 3' }} gridRow='3/4'>
-				Increase employee engagement, retention and growth with 3 key features.
+				Increase employee engagement, retention and growth with three key features.
 				Primarily an internal job marketplace powered by machine learning to match
 				highly relevant jobs with employees, career pathing, and mentorship matching. 
 				</Text>

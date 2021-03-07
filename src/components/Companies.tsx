@@ -6,17 +6,19 @@ import { ImageWrapper } from './ImageWrapper';
 export const Companies: React.FC = () => {
 	return (
 		<Wrapper>
+			<Heading mt='30' as='h3' textAlign='center'>
+					As featured in:
+			</Heading>
 			<Grid
 				templateColumns={{ base: '1fr', lg: 'max-content 1fr' }}
 				alignItems='center'
 				rowGap={6}
 				columnGap={10}
 				py={12}
+				
 			>
-				<Heading as='h3' textAlign={{ base: 'center', lg: 'unset' }}>
-					As featured in:
-				</Heading>
-				<Flex justifyContent='center' wrap='wrap'>
+				
+				<Flex justifyContent='center' width='100%' maxW='1200px'>
 					<ImageWrapper
 						mr={6}
 						mb={2}

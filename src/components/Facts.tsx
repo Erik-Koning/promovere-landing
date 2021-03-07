@@ -14,16 +14,20 @@ interface FactItemProps {
 
 const FactItem: React.FC<FactItemProps> = ({ denominator = 0, numerator = 0, statSymbol, text, isFraction }) => {
 	const headingSize = useBreakpointValue({ base: 'lg', xs: 'xl', sm: '2xl' });
-	const [ref, inView] = useInView({ threshold: 0.6, triggerOnce: true });
+	const [ref, inView] = useInView({ threshold: 0.7, triggerOnce: true });
 
 	const { start: startDenominator, countUp: countUpDenominator } = useCountUp({
 		start: 0,
 		end: denominator,
+		duration: 4,
+		delay: 1,
 	});
 
 	const { start: startNumerator, countUp: countUpNumerator } = useCountUp({
 		start: 0,
 		end: numerator,
+		duration: 4,
+		delay: 4,
 	});
 
 	useEffect(() => {
@@ -43,7 +47,7 @@ const FactItem: React.FC<FactItemProps> = ({ denominator = 0, numerator = 0, sta
 			ref={ref}
 			opacity={0}
 			transform='translateY(10px)'
-			animation={inView ? 'fadeUp 0.6s ease-in forwards' : ''}
+			animation={inView ? 'fadeUp 0.7s ease-in forwards' : ''}
 		>
 			<Image width='100%' src='/img/hexagon.svg' gridRow='1 / 3' gridColumn='1 / 3' />
 			<Heading size={headingSize} gridRow='1 / 2' gridColumn='1 / 3' alignSelf='end'>
@@ -65,16 +69,16 @@ const FactItem: React.FC<FactItemProps> = ({ denominator = 0, numerator = 0, sta
 
 export const Facts: React.FC = () => {
 	return (
-		<Grid mb={16}>
+		<Grid mb='70'>
 			<Wrapper bg='brand'>
 				<Grid pt={16} pb={6} gap={2}>
-					<Heading>The Facts of Employees at Work</Heading>
-					<Text>our mission is to improve these values.</Text>
+					<Heading>The Old Model of Business Isn't Working</Heading>
+					<Text>Our mission is to improve these figures</Text>
 				</Grid>
 			</Wrapper>
 			<Grid templateColumns='1fr 1fr' templateRows='1fr 1fr'>
 				<Box gridRow='1 / 2' gridColumn='1 / -1' bg='brand' />
-				<Box gridRow='2 / 3' gridColumn='1 / -1' bg='white' />
+				<Box gridRow='2 / 3' gridColumn='1 / -1' bg='brand' />
 				<Wrapper gridRow='1 / -1' gridColumn='1 / -1'>
 					<Grid
 						maxWidth='70rem'
@@ -84,9 +88,9 @@ export const Facts: React.FC = () => {
 						alignContent='center'
 						mx='auto'
 					>
-						<FactItem numerator={52} statSymbol='%' text='Unengaged at work' />
-						<FactItem numerator={15} statSymbol='x' text='Job switches in a lifetime' />
-						<FactItem numerator={1} denominator={2} text='Of an employees salary to find a replacement' isFraction />
+						<FactItem numerator={15} statSymbol='x' text='Number of times and Employee will switch jobs in a lifetime' />
+						<FactItem numerator={52} statSymbol='%' text='Report being unengaged at work' />
+						<FactItem numerator={1} denominator={2} text='Amount of an employees salary to hire a replacement' isFraction="1" />
 					</Grid>
 				</Wrapper>
 			</Grid>

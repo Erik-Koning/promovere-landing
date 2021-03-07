@@ -9,15 +9,15 @@ export const REASONS_DATA = [
 		reasons: [
 			{
 				title: 'Satisfaction',
-				subText: 'Connecting projects to employees that balance their skill qualifications, and skill growth aspirations.',
+				subText: 'Connecting projects to employees that balance their skill qualifications, and skill growth aspirations',
 			},
 			{
 				title: 'Retention',
-				subText: 'We intelligently match jobs, mentors, and carreer paths to employees based on their goals, and aspirations.',
+				subText: 'We intelligently match jobs, mentors, and career paths to employees based on their goals, and aspirations',
 			},
 			{
 				title: 'Growth',
-				subText: 'Identifing projects that match your growth aspirations, so we can help you develope in the most efficient way possible.',
+				subText: 'Identifing projects that match your growth aspirations, so we can help you develope in the most efficient way possible',
 			},
 		],
 		img: {
@@ -38,7 +38,7 @@ export const REASONS_DATA = [
 			},
 			{
 				title: 'Organization',
-				subText: 'Manage each employees individual career path, goals, and aspirations in one place.',
+				subText: 'Manage each employees individual career path, goals, and aspirations in one place',
 			},
 		],
 		img: {
@@ -51,15 +51,15 @@ export const REASONS_DATA = [
 		reasons: [
 			{
 				title: 'Innovation',
-				subText: 'Enables innovative projects that are internal to your company to be connected effectively with the employees who are passionate about achieving it.',
+				subText: 'Enables innovative projects that are internal to your company to be connected effectively with the employees who are passionate about achieving it',
 			},
 			{
 				title: 'Employee Retention',
-				subText: 'Employees are happier and more likely to grow within your company.',
+				subText: 'Employees are happier and more likely to grow within your company',
 			},
 			{
 				title: 'Productivity',
-				subText: 'With employees that are more engaged, work quality is improved, and more ambitious work is executed.',
+				subText: 'With employees that are more engaged, work quality is improved, and more ambitious work is executed',
 			},
 		],
 		img: {
@@ -87,7 +87,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} />;
 
 	const ListNumber = () => (
-		<Text fontSize='4rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
+		<Text fontSize='2.2rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
 			{number}.
 		</Text>
 	);
@@ -98,6 +98,9 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 				base: isEven ? 'max-content 1fr' : 'max-content 1fr',
 				md: isEven ? 'max-content 1fr' : '1fr',
 			}}
+			//mt='10'
+			//mb='20'
+			//pb='20'
 		>
 			{!isEven && <ListNumber />}
 			<Grid
@@ -106,10 +109,10 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 				alignSelf='end'
 				gap={2}
 			>
-				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: isEven ? 'end' : 'start', md: 'start' }}>
+				{isEven && <ListNumber />}
+				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: 'start', md: 'start' }}>
 					{title}
 				</Heading>
-				{isEven && <ListNumber />}
 			</Grid>
 			<Grid gap={6} gridColumn={{ base: '1 / 3', md: '2 / 3' }} mt={4}>
 				{reasons.map((reason, index) => (
@@ -123,7 +126,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 	);
 
 	return (
-		<Wrapper bg={isEven ? 'brand' : 'none'}>
+		<Wrapper bg={isEven ? 'brand' : 'none'} pt='2' pb='5'>
 			<Grid
 				justifyContent='space-between'
 				templateColumns={{ base: '1fr', sm: isEven ? '60% 40%' : "40% 60%", lg: '50% 50%' }}

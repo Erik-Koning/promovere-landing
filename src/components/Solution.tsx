@@ -20,7 +20,7 @@ export const Solution: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<Box py={16}>
+			<Box py={5}>
 				<Grid
 					position='relative'
 					height='max-content'
@@ -31,7 +31,7 @@ export const Solution: React.FC = () => {
 				>
 					<Box position='absolute' top='0' left='0'>
 						<Heading mb={2}>Ever-Improving</Heading>
-						<Text fontSize='sm'>ML algoritm provides relevant matches, and adapts with each  </Text>
+						<Text fontSize='sm'>Machine-Learning algoritm provides relevant matches, and adapts with each  </Text>
 						<Text fontSize='sm'>new data point to give all stack holders in the company a voice.</Text>
 					</Box>
 
