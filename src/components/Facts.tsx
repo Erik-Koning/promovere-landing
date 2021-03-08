@@ -90,7 +90,7 @@ export const Facts: React.FC = () => {
 					>
 						<FactItem numerator={15} statSymbol='x' text='Number of times and Employee will switch jobs in a lifetime' />
 						<FactItem numerator={52} statSymbol='%' text='Report being unengaged at work' />
-						<FactItem numerator={1} denominator={2} text='Amount of an employees salary to hire a replacement' isFraction="1" />
+						<FactItem numerator={1} denominator={2} text='Amount of an employees salary to hire a replacement' isFraction />
 					</Grid>
 				</Wrapper>
 			</Grid>
