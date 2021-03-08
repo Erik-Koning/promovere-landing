@@ -14,7 +14,7 @@ export const Companies: React.FC = () => {
 				alignItems='center'
 				rowGap={6}
 				columnGap={10}
-				py={12}
+				py={10}
 				
 			>
 				

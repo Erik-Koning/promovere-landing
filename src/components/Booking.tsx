@@ -104,11 +104,11 @@ export const Booking: React.FC = () => {
 						onChange={(e) => setNumOfEmployees(e.target.value)}
 						required
 					>
-						<option>0-10</option>
-						<option>10-20</option>
-						<option>20-50</option>
-						<option>50-100</option>
-						<option>100+</option>
+						<option>0-9</option>
+						<option>10-49</option>
+						<option>50-99</option>
+						<option>100-499</option>
+						<option>500+</option>
 					</Select>
 					<Select
 						borderColor='gray.400'
