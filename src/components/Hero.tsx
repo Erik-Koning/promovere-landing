@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
 						</Link>
 					</VStack>
 					</GridItem>
-					<GridItem colSpan={1}>
+					<GridItem pt={22} colSpan={1}>
 						<AspectRatio maxW="100%" ratio={1.775}>
 						<iframe
 							title="naruto"
