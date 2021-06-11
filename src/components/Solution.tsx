@@ -31,12 +31,12 @@ export const Solution: React.FC = () => {
 				>
 					<Box position='absolute' top='0' left='0'>
 						<Heading mb={2}>Ever-Improving</Heading>
-						<Text fontSize='sm'>Machine-Learning algoritm provides relevant matches, and adapts with each  </Text>
+						<Text fontSize='sm'>Machine-Learning algorithms provides relevant matches, and adapts with each  </Text>
 						<Text fontSize='sm'>new data point to give all stack holders in the company a voice.</Text>
 					</Box>
 
 					<Text fontWeight='bold' gridRow='1 / 2' gridColumn='1 / -1' justifySelf='center'>
-						More Oppurtunities Posted
+						More opportunities Posted
 					</Text>
 					<Text
 						fontWeight='bold'

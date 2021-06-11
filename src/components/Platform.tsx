@@ -23,7 +23,7 @@ export const Platform: React.FC = () => {
 					The Platform
 				</Heading>
 				<Image
-					src='/img/laptop.jpg'
+					src='/img/laptop.png'
 					width='100%'
 					maxWidth='20rem'
 					gridColumn={{ base: '2 / 3', sm: '1 / 2' }}

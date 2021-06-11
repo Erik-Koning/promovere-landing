@@ -17,7 +17,7 @@ export const REASONS_DATA = [
 			},
 			{
 				title: 'Growth',
-				subText: 'Identifing projects that match your growth aspirations, so we can help you develope in the most efficient way possible',
+				subText: 'Identifing projects that match your growth aspirations, so we can help you develop in the most efficient way possible',
 			},
 		],
 		img: {
@@ -38,7 +38,7 @@ export const REASONS_DATA = [
 			},
 			{
 				title: 'Organization',
-				subText: 'Manage each employees individual career path, goals, and aspirations in one place',
+				subText: 'Manage each employee\'s individual career path, goals, and aspirations in one place',
 			},
 		],
 		img: {

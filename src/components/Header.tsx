@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
 			bg='white'
 		>
 			<Grid templateColumns="1fr max-content" gap={4}>
-				<ImageWrapper width={{ base: "20vw", md: "10vw", lg: "8rem" }} minWidth="6rem" height="100%" display={{ base: "block", sm: "none", md: "block"}} src="/img/logo.png" alt="promovere logo" priority />
+				<ImageWrapper width={{ base: "20vw", md: "10vw", lg: "8rem" }} minWidth="12rem" height="100%" display={{ base: "block", sm: "none", md: "block"}} src="/img/logo.png" alt="promovere logo" priority />
 				<ImageWrapper width="4vw" height="100%" display={{ base: "none", sm: "block", md: "none"}} src="/img/logo-small.png" alt="promovere logo" priority />
 				<SimpleGrid
 					autoFlow='column'
@@ -41,6 +41,9 @@ export const Header: React.FC = () => {
 							Book a Demo
 						</Button>
 					</Link>
+						<Button as='a' target='_blank' variant='outline' href='https://promovere.herokuapp.com/user/login' color='brandText' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
+							Login
+						</Button>
 				</SimpleGrid>
 			</Grid>
 		</Wrapper>

@@ -76,24 +76,24 @@ export const Facts: React.FC = () => {
 					<Text>Our mission is to improve these figures</Text>
 				</Grid>
 			</Wrapper>
-			<Grid templateColumns='1fr 1fr' templateRows='1fr 1fr'>
-				<Box gridRow='1 / 2' gridColumn='1 / -1' bg='brand' />
-				<Box gridRow='2 / 3' gridColumn='1 / -1' bg='brand' />
-				<Wrapper gridRow='1 / -1' gridColumn='1 / -1'>
+				<Wrapper justify-self = 'center' align-content = 'center' bg='brand'>
 					<Grid
 						maxWidth='70rem'
-						templateColumns='repeat(3, 1fr)'
-						justifyContent='space-between'
+						templateColumns = 'repeat(3, 1fr)'
+						justifyContent = 'center'
+						justify-self = 'center'
+						align-content = 'center'
+  					 	justify-content = 'center'
 						gap={{ base: 0, xs: 2, md: 4 }}
 						alignContent='center'
+						alignItems='center'
 						mx='auto'
 					>
-						<FactItem numerator={15} statSymbol='x' text='Number of times and Employee will switch jobs in a lifetime' />
-						<FactItem numerator={52} statSymbol='%' text='Report being unengaged at work' />
+						<FactItem numerator={15} statSymbol='x' text='Times an employee switches jobs in a lifetime' />
+						<FactItem numerator={52} statSymbol='%' text='Percent of employees unengaged at work' />
 						<FactItem numerator={1} denominator={2} text='Amount of an employees salary to hire a replacement' isFraction />
 					</Grid>
 				</Wrapper>
 			</Grid>
-		</Grid>
 	);
 };
