@@ -23,21 +23,21 @@ export const Header: React.FC = () => {
 					spacing={{base: 2, md: 4 }}
 					py={3}
 				>
-					<Button onClick={() => scroll.scrollToTop()} display={{ base: "none", sm: "inline-flex"}} variant='ghost' color="blueDark" colorScheme='purple' height='2rem'>
+					<Button onClick={() => scroll.scrollToTop()} display={{ base: "none", sm: "inline-flex"}} variant='ghost' color='brandText' colorScheme='purple' height='2rem'>
 						Home
 					</Button>
 					<Link to='why-promovere' smooth={true} offset={-70}>
-						<Button variant='ghost' color="blueDark" colorScheme='purple' height='2rem' display={{ base: "none", sm: "inline-flex"}}>
+						<Button variant='ghost' color='brandText' colorScheme='purple' height='2rem' display={{ base: "none", sm: "inline-flex"}}>
 							Why Promovere
 						</Button>
 					</Link>
 					<Link to='platform' smooth={true} offset={-30}>
-						<Button variant='ghost' color="blueDark" colorScheme='purple' height='2rem' display={{ base: "none", sm: "inline-flex"}}>
+						<Button variant='ghost' color='brandText' colorScheme='purple' height='2rem' display={{ base: "none", sm: "inline-flex"}}>
 							Platform
 						</Button>
 					</Link>
 					<Link to='booking' smooth={true} offset={-50}>
-						<Button bg='brand' _hover={{ bg: "brandDark"}} height='2rem'>
+						<Button color='brandText' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
 							Book a Demo
 						</Button>
 					</Link>

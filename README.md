@@ -1,4 +1,5 @@
 # Promovere Landing Page
+# Written by Ben Lammers, Erik Koning
 
 ## Tech Stack
 

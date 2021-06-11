@@ -41,6 +41,15 @@ export const Platform: React.FC = () => {
 				highly relevant jobs with employees, career pathing, and mentorship matching. 
 				</Text>
 			</Grid>
+			<Grid>
+				<Image
+					boxSize="400px"
+					objectFit="cover"
+					src="\img\platform\Gig Work with more breakdown (3).png"
+					alt="Project Marketplace"
+				/>
+
+			</Grid>
 		</Wrapper>
 	);
 };
