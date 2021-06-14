@@ -12,8 +12,8 @@ export const Platform: React.FC = () => {
 			>
 				<Heading
 					as='h2'
-					px={2}
-					py={1}
+					px={5}
+					py={2}
 					bg='brand'
 					height='min-content'
 					borderRadius='full'
@@ -41,11 +41,41 @@ export const Platform: React.FC = () => {
 				highly relevant jobs with employees, career pathing, and mentorship matching. 
 				</Text>
 			</Grid>
-			<Grid>
+			<Grid 
+				templateColumns="repeat(3, 1fr)"
+				gap={10}
+				justify-self = 'center'
+				alignContent='center'
+				alignItems='center'
+			>
 				<Image
-					boxSize="400px"
+					boxShadow="xl"
+					rounded="md"
 					objectFit="cover"
+					width="100%"
 					src="\img\platform\Gig Work with more breakdown (3).png"
+					alt="Project Marketplace"
+				/>
+				<Image
+					boxShadow="xl"
+					rounded="md"
+					objectFit="cover"
+					//width="100%"
+					p={4}
+					ml={50}
+					align-self = 'center'
+					justify-self = 'center'
+					alignContent='center'
+					height="400px"
+					src="\img\platform\postNewOp.png"
+					alt="Project Marketplace"
+				/>
+				<Image
+					boxShadow="xl"
+					rounded="md"
+					objectFit="cover"
+					width="100%"
+					src="\img\platform\job information.png"
 					alt="Project Marketplace"
 				/>
 

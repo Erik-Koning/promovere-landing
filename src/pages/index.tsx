@@ -8,18 +8,18 @@ import { Reasons } from '../components/Reasons';
 import { Platform } from '../components/Platform';
 import { Booking } from '../components/Booking';
 import { Facts } from '../components/Facts';
-import { Solution } from '../components/Solution';
+import { Improving } from '../components/Improving';
 import { Footer } from '../components/Footer';
 
 const Index = () => (
-	<Grid height='100%' position="relative">
+	<Grid height='100%' width='100%' position="absolute">
 		<Header />
 		<Hero />
 		<Companies />
 		<Facts />
 		<Reasons />
 		<Platform />
-		<Solution />
+		<Improving />
 		<Booking />
 		<Footer />
 	</Grid>

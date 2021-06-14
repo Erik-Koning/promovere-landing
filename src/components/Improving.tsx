@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
-export const Solution: React.FC = () => {
+export const Improving: React.FC = () => {
 	const CircleStyle = {
 		width: '100%',
 		height: '100%',
@@ -20,7 +20,7 @@ export const Solution: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<Box py={5}>
+			<Box py={20}>
 				<Grid
 					position='relative'
 					height='max-content'
@@ -30,11 +30,22 @@ export const Solution: React.FC = () => {
 					pt='8rem'
 				>
 					<Box position='absolute' top='0' left='0'>
-						<Heading mb={2}>Ever-Improving</Heading>
+						<Heading
+							as='h2'
+							px={5}
+							py={2}
+							bg='brand'
+							height='min-content'
+							borderRadius='full'
+							width='max-content'
+							gridColumn={{ base: '1 / 2', sm: '1 / -1' }}
+						>
+							Cyclically Improving
+						</Heading>
 						<Text fontSize='sm'>Machine-Learning algorithms provides relevant matches, and adapts with each  </Text>
 						<Text fontSize='sm'>new data point to give all stack holders in the company a voice.</Text>
 					</Box>
-
+					
 					<Text fontWeight='bold' gridRow='1 / 2' gridColumn='1 / -1' justifySelf='center'>
 						More opportunities Posted
 					</Text>
