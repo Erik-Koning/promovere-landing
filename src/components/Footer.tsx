@@ -10,10 +10,8 @@ export const Footer: React.FC = () => {
 				<Text>PROMOVERE</Text>
 				<Text gridColumn={{ base: 'span 2', md: '2 / 3'}} gridRow={{ base: '2 / 3', md: '1 / 2' }} justifySelf='center'>
 					&copy; 
-					<span id="copyright">
-        				<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-    				</span>
-					Promovere. All rights reserved
+					<script type="text/javascript">document.write(new Date().getFullYear())</script>
+					2021 Promovere. All rights reserved
 				</Text>
 				<HStack>
 					<Button as={Link} variant='wrapper' isExternal href='https://www.linkedin.com/company/promovereco'>

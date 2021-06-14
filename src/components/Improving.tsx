@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Image, Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
 export const Improving: React.FC = () => {
@@ -23,10 +23,8 @@ export const Improving: React.FC = () => {
 			<Box py={20}>
 				<Grid
 					position='relative'
-					height='max-content'
+					height='100%'
 					width='100%'
-					templateColumns={`1fr ${diagramPadding} repeat(16, ${diagramSize}) ${diagramPadding} 1fr`}
-					templateRows={`max-content ${diagramPadding} repeat(16, ${diagramSize}) ${diagramPadding} max-content`}
 					pt='8rem'
 				>
 					<Box position='absolute' top='0' left='0'>
@@ -43,47 +41,22 @@ export const Improving: React.FC = () => {
 							Cyclically Improving
 						</Heading>
 						<br></br>
-						<Text fontSize='sm'>Machine-Learning algorithms provides relevant matches, and adapts with each  </Text>
-						<Text fontSize='sm'>new data point to give all stack holders in the company a voice.</Text>
+						<Text>Machine-Learning algorithms provides relevant matches, and adapts with each  </Text>
+						<Text>new data point to give all stack holders in the company a voice.</Text>
+						<Image
+							src='\img\cycle.png'
+							ml={150}
+							height="400px"
+							width='75%'
+							//maxWidth='20rem'
+							alignItems='center'
+							justifySelf='center'
+						/>
 					</Box>
-					
-					<Text fontWeight='bold' gridRow='1 / 2' gridColumn='1 / -1' justifySelf='center'>
-						More opportunities Posted
-					</Text>
-					<Text
-						fontWeight='bold'
-						gridRow='1 / -1'
-						gridColumn='1 / 2'
-						justifySelf='end'
-						alignSelf='center'
-						width={{ base: 'min-content', md: 'max-content' }}
-					>
-						Better Platform
-					</Text>
-					<Text
-						fontWeight='bold'
-						gridRow='1 / -1'
-						gridColumn='-2 / -1'
-						justifySelf='start'
-						alignSelf='center'
-						width={{ base: 'min-content', md: 'max-content' }}
-					>
-						More Feedback and Data
-					</Text>
-					<Text fontWeight='bold' gridRow='-2 / -1' gridColumn='1 / -1' justifySelf='center'>
-						Better Machine Learning Algorithms
-					</Text>
-
-					<Box gridRow='4 / span 14' gridColumn='4 / span 14' {...CircleWithBorderStyle} bg='white' />
-					<Box gridRow='6 / span 10' gridColumn='6 / span 10' {...CircleStyle} bg='brand' />
-					<Box gridRow='8 / span 6' gridColumn='8 / span 6' {...CircleStyle} bg='white' />
-
-					<Box gridRow='3 / span 2' gridColumn='10 / span 2' {...CircleWithBorderStyle} bg='white' />
-					<Box gridRow='17 / span 2' gridColumn='10 / span 2' {...CircleWithBorderStyle} bg='white' />
-					<Box gridRow='10 / span 2' gridColumn='3 / span 2' {...CircleWithBorderStyle} bg='white' />
-					<Box gridRow='10 / span 2' gridColumn='17 / span 2' {...CircleWithBorderStyle} bg='white' />
+					<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 				</Grid>
 			</Box>
+			
 		</Wrapper>
 	);
 };
