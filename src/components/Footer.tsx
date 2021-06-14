@@ -8,7 +8,13 @@ export const Footer: React.FC = () => {
 		<Wrapper bg='black'>
 			<Grid templateColumns={{ base: '1fr max-content', md: 'max-content 1fr max-content'}} alignItems='center' color='white' py={6} gap={4}>
 				<Text>PROMOVERE</Text>
-				<Text gridColumn={{ base: 'span 2', md: '2 / 3'}} gridRow={{ base: '2 / 3', md: '1 / 2' }} justifySelf='center'>&copy; 2020 Promovere. All rights reserved</Text>
+				<Text gridColumn={{ base: 'span 2', md: '2 / 3'}} gridRow={{ base: '2 / 3', md: '1 / 2' }} justifySelf='center'>
+					&copy; 
+					<span id="copyright">
+        				<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    				</span>
+					Promovere. All rights reserved
+				</Text>
 				<HStack>
 					<Button as={Link} variant='wrapper' isExternal href='https://www.linkedin.com/company/promovereco'>
 						<Box bg='white' borderRadius='full' p={2} >

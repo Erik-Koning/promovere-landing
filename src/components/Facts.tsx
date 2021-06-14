@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Grid, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 import { useInView } from 'react-intersection-observer';
 import { useCountUp } from 'react-countup';

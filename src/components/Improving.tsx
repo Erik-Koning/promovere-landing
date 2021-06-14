@@ -42,6 +42,7 @@ export const Improving: React.FC = () => {
 						>
 							Cyclically Improving
 						</Heading>
+						<br></br>
 						<Text fontSize='sm'>Machine-Learning algorithms provides relevant matches, and adapts with each  </Text>
 						<Text fontSize='sm'>new data point to give all stack holders in the company a voice.</Text>
 					</Box>
