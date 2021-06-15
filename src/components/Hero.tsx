@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
 	return (
 		<Wrapper bg='brand' pt='10' pb='10'>
 			
-				<Grid h="100%" templateColumns="repeat(2, 1fr)" gap={6}>
+				<Grid h="100%" templateColumns="repeat(2, 1fr)" gap={6} color='white'>
 					<GridItem colSpan={1}>
 					<VStack py={12} spacing={4} align='start' width="min-content">
 						<Heading as='h2' size='2xl' lineHeight='1.3' width="max-content">
@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
 							growth
 						</Text>
 						<Link to='booking' smooth={true}>
-							<Button bg='white' boxShadow="base" _hover={{ bg: "white", boxShadow: "lg"}}>
+							<Button bg='white' color='black' boxShadow="base" _hover={{ bg: "white", boxShadow: "lg"}}>
 								Learn More
 							</Button>
 						</Link>

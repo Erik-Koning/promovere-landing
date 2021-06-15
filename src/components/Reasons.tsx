@@ -147,7 +147,7 @@ export const Reasons: React.FC = () => {
 	return (
 		<Grid id='why-promovere'>
 			<Wrapper>
-				<Heading as='h2' px={2} py={1} bg='brand' borderRadius='full' width='max-content'>
+				<Heading as='h2' px={2} py={1} color='white' bg='brand' borderRadius='full' width='max-content'>
 					Why Promovere
 				</Heading>
 			</Wrapper>

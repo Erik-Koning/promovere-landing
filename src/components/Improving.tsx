@@ -23,6 +23,7 @@ export const Improving: React.FC = () => {
 							borderRadius='full'
 							width='max-content'
 							gridColumn={{ base: '1 / 2', sm: '1 / -1' }}
+							color='white'
 						>
 							Cyclically Improving
 						</Heading>

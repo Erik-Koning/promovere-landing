@@ -37,11 +37,11 @@ export const Header: React.FC = () => {
 						</Button>
 					</Link>
 					<Link to='booking' smooth={true} offset={-50}>
-						<Button color='brandText' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
+						<Button color='white' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
 							Book a Demo
 						</Button>
 					</Link>
-						<Button as='a' target='_blank' variant='outline' href='https://promovere.herokuapp.com/user/login' color='brandText' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
+						<Button as='a' target='_blank' variant='outline' href='https://promovere.herokuapp.com/user/login' color='white' bg='brand' _hover={{ color:"black", bg: "brandDark"}} height='2rem'>
 							Login
 						</Button>
 				</SimpleGrid>

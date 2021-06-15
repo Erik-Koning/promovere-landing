@@ -72,8 +72,8 @@ export const Facts: React.FC = () => {
 		<Grid mb='70'>
 			<Wrapper bg='brand'>
 				<Grid pt={16} pb={6} gap={2}>
-					<Heading>The Old Model of Business Isn't Working</Heading>
-					<Text>Our mission is to improve these figures</Text>
+					<Heading color='white'>The Old Model of Business Isn't Working</Heading>
+					<Text color='white'>Our mission is to improve these figures</Text>
 				</Grid>
 			</Wrapper>
 				<Wrapper justify-self = 'center' align-content = 'center' bg='brand'>
