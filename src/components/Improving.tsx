@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Image, Grid, Box, Heading, Text} from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
 
 export const Improving: React.FC = () => {
