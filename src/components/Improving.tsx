@@ -3,20 +3,6 @@ import { Image, Grid, Box, Heading, Text, useBreakpointValue } from '@chakra-ui/
 import { Wrapper } from './Wrapper';
 
 export const Improving: React.FC = () => {
-	const CircleStyle = {
-		width: '100%',
-		height: '100%',
-		borderRadius: 'full',
-	};
-
-	const CircleWithBorderStyle = {
-		...CircleStyle,
-		border: '1px solid',
-		borderColor: 'brand',
-	};
-
-	const diagramPadding = '1vw';
-	const diagramSize = useBreakpointValue({ base: '3vw', xs: '3vw', lg: '2rem' });
 
 	return (
 		<Wrapper>

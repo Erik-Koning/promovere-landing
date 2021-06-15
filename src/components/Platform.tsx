@@ -42,8 +42,8 @@ export const Platform: React.FC = () => {
 				</Text>
 			</Grid>
 			<Grid 
-				templateColumns="repeat(3, 1fr)"
-				gap={10}
+				templateColumns="repeat(2, 1fr)"
+				gap={40}
 				justify-self = 'center'
 				alignContent='center'
 				alignItems='center'
@@ -60,21 +60,7 @@ export const Platform: React.FC = () => {
 					boxShadow="xl"
 					rounded="md"
 					objectFit="cover"
-					//width="100%"
-					p={4}
-					ml={50}
-					align-self = 'center'
-					justify-self = 'center'
-					alignContent='center'
-					height="400px"
-					src="\img\platform\postNewOp.png"
-					alt="Project Marketplace"
-				/>
-				<Image
-					boxShadow="xl"
-					rounded="md"
-					objectFit="cover"
-					width="100%"
+					width="92%"
 					src="\img\platform\job information.png"
 					alt="Project Marketplace"
 				/>

@@ -17,12 +17,12 @@ export const REASONS_DATA = [
 			},
 			{
 				title: 'Growth',
-				subText: 'Identifing projects that match your growth aspirations, so we can help you develop in the most efficient way possible',
+				subText: 'Identifying projects that match your growth aspirations, so we can help you develop in the most efficient way possible',
 			},
 		],
 		img: {
-			src: '/img/reasons/growth.png',
-			alt: 'Rocket ship on graph',
+			src: '/img/platform/recommendedOps.png',
+			alt: 'Recommended Opportunities',
 		},
 	},
 	{
@@ -42,7 +42,7 @@ export const REASONS_DATA = [
 			},
 		],
 		img: {
-			src: '/img/reasons/optimize.png',
+			src: '/img/platform/postOps.png',
 			alt: 'Magnifying Glass',
 		},
 	},
@@ -63,8 +63,8 @@ export const REASONS_DATA = [
 			},
 		],
 		img: {
-			src: '/img/reasons/building.png',
-			alt: 'Building',
+			src: '/img/platform/pastOps.png',
+			alt: 'Previous Opportunities',
 		},
 	},
 ];
@@ -84,7 +84,7 @@ interface ReasonItemProps {
 }
 
 const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons, img }) => {
-	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} />;
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} width='425px' height='330px' mt='50' boxShadow="xl" />;
 
 	const ListNumber = () => (
 		<Text fontSize='2.2rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
