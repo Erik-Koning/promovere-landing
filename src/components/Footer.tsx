@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Grid, HStack, Link, Text } from '@chakra-ui/react';
 import { Wrapper } from './Wrapper';
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
 	return (
@@ -9,9 +9,12 @@ export const Footer: React.FC = () => {
 			<Grid templateColumns={{ base: '1fr max-content', md: 'max-content 1fr max-content'}} alignItems='center' color='white' py={6} gap={4}>
 				<Text>PROMOVERE</Text>
 				<Text gridColumn={{ base: 'span 2', md: '2 / 3'}} gridRow={{ base: '2 / 3', md: '1 / 2' }} justifySelf='center'>
-					&copy; 
-					<script type="text/javascript">document.write(new Date().getFullYear())</script>
-					2021 Promovere. All rights reserved
+					<div className="copyright">
+						&copy; <span id="year"></span>2020 Promovere. All rights reserved
+					</div>
+					<script type="text/javascript">
+						$('#year').text(new Date().getFullYear());
+					</script>
 				</Text>
 				<HStack>
 					<Button as={Link} variant='wrapper' isExternal href='https://www.linkedin.com/company/promovereco'>
