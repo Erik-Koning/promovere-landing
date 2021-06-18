@@ -71,6 +71,7 @@ export const Booking: React.FC = () => {
 				</Box>
 				<Grid as='form' templateColumns='1fr 1fr' gap={4} onSubmit={sendEmail}>
 					<Input
+						color='white'
 						borderColor='gray.400'
 						type='text'
 						placeholder='Full Name'
@@ -80,6 +81,7 @@ export const Booking: React.FC = () => {
 						required
 					/>
 					<Input
+						color='white'
 						borderColor='gray.400'
 						type='text'
 						placeholder='Company Name'
@@ -89,6 +91,7 @@ export const Booking: React.FC = () => {
 						required
 					/>
 					<Input
+						color='white'
 						borderColor='gray.400'
 						type='email'
 						placeholder='Email Address'
@@ -98,12 +101,14 @@ export const Booking: React.FC = () => {
 						required
 					/>
 					<Select
+						color='gray.400'
 						borderColor='gray.400'
+						bg='brandDark'
 						placeholder='# of Employees'
 						value={num_of_employees}
 						onChange={(e) => setNumOfEmployees(e.target.value)}
 						required
-					>
+					>	
 						<option>0-9</option>
 						<option>10-49</option>
 						<option>50-99</option>
@@ -111,6 +116,7 @@ export const Booking: React.FC = () => {
 						<option>500+</option>
 					</Select>
 					<Select
+						color='gray.400'
 						borderColor='gray.400'
 						placeholder='Industry'
 						value={industry}
@@ -270,6 +276,7 @@ export const Booking: React.FC = () => {
 					</Select>
 					{industry === 'Other' && (
 						<Input
+							color='white'
 							borderColor='gray.400'
 							type='text'
 							placeholder='Specify Industry'
@@ -281,6 +288,7 @@ export const Booking: React.FC = () => {
 					)}
 					<Textarea
 						rows={6}
+						color='white'
 						placeholder='Notes'
 						borderColor='gray.400'
 						gridColumn='1 / -1'

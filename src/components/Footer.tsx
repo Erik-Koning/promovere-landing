@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
 				<Text>PROMOVERE</Text>
 				<Text gridColumn={{ base: 'span 2', md: '2 / 3'}} gridRow={{ base: '2 / 3', md: '1 / 2' }} justifySelf='center'>
 					<div className="copyright">
-						&copy; <span id="year"></span>2020 Promovere. All rights reserved
+						&copy; <span id="year"></span>2021 Promovere. All rights reserved
 					</div>
 					<script type="text/javascript">
 						$('#year').text(new Date().getFullYear());

@@ -21,7 +21,7 @@ export const REASONS_DATA = [
 			},
 		],
 		img: {
-			src: '/img/platform/recommendedOps.png',
+			src: '/img/platform/recommendedOpsCrop.png',
 			alt: 'Recommended Opportunities',
 		},
 	},
@@ -42,7 +42,7 @@ export const REASONS_DATA = [
 			},
 		],
 		img: {
-			src: '/img/platform/postOps.png',
+			src: '/img/platform/postOpsCropTrans.png',
 			alt: 'Magnifying Glass',
 		},
 	},
@@ -63,7 +63,7 @@ export const REASONS_DATA = [
 			},
 		],
 		img: {
-			src: '/img/platform/pastOps.png',
+			src: '/img/platform/pastOpsCrop.png',
 			alt: 'Previous Opportunities',
 		},
 	},
@@ -84,10 +84,10 @@ interface ReasonItemProps {
 }
 
 const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons, img }) => {
-	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} width='425px' height='330px' mt='50' boxShadow="xl" />;
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} width='485px' height='330px' pt='30' pt={number===3 ? '30' : '30' } mt='10' mb='10' ml='10' />;
 
 	const ListNumber = () => (
-		<Text fontSize='2.2rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1'>
+		<Text fontSize='2.2rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1' mt={number===3 ? '10' : '0' }>
 			{number}.
 		</Text>
 	);
@@ -98,6 +98,8 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 				base: isEven ? 'max-content 1fr' : 'max-content 1fr',
 				md: isEven ? 'max-content 1fr' : '1fr',
 			}}
+			mt='10'
+			mb={number===3 ? '5' : '20' }
 			//mt='10'
 			//mb='20'
 			//pb='20'
@@ -107,7 +109,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 				templateColumns={{ base: isEven ? '1fr max-content' : 'max-content 1fr', md: 'max-content 1fr' }}
 				gridColumn={isEven ? '1 / -1' : '2 / 3'}
 				alignSelf='end'
-				gap={2}
+				gap={0}
 			>
 				{isEven && <ListNumber />}
 				<Heading pb={2} size='lg' alignSelf='end' justifySelf={{ base: 'start', md: 'start' }}>
@@ -134,6 +136,7 @@ const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons,
 				py={6}
 				gap={4}
 				bg={isEven ? 'brand' : 'white'}
+				color={isEven ? 'white' : 'black'}
 			>
 				{!isEven && <Info />}
 				<Graphic />
