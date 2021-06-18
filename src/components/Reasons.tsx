@@ -84,7 +84,7 @@ interface ReasonItemProps {
 }
 
 const ReasonItem: React.FC<ReasonItemProps> = ({ isEven, number, title, reasons, img }) => {
-	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} width='485px' height='330px' pt='30' pt={number===3 ? '30' : '30' } mt='10' mb='10' ml='10' />;
+	const Graphic = () => <ImageWrapper src={img.src} alt={img.alt} display={{ base: 'none', sm: 'block' }} width='485px' height='330px' pt='30' mt='10' mb='10' ml='10' />;
 
 	const ListNumber = () => (
 		<Text fontSize='2.2rem' mr={2} color='gray.500' fontWeight='700' lineHeight='1' mt={number===3 ? '10' : '0' }>
