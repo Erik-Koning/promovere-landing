@@ -79,6 +79,7 @@ export const Facts: React.FC = () => {
 				<Wrapper justify-self = 'center' align-content = 'center' bg='brand'>
 					<Grid
 						pl={75}
+						pb='40px'
 						maxWidth='70rem'
 						templateColumns = 'repeat(3, 1fr)'
 						gap={{ base: 20, xs: 5, md: 30 }}
@@ -86,7 +87,7 @@ export const Facts: React.FC = () => {
 					>	
 						<FactItem numerator={15} statSymbol='x' text='Times an employee switches jobs in a lifetime' />
 						<FactItem numerator={52} statSymbol='%' text='Percent of employees unengaged at work' />
-						<FactItem numerator={1} denominator={2} text="Amount of an employee\'s salary to hire a replacement" isFraction />
+						<FactItem numerator={1} denominator={2} text="Amount of an employee's salary to hire a replacement" isFraction />
 					</Grid>
 				</Wrapper>
 			</Grid>
