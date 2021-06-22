@@ -64,10 +64,10 @@ export const Booking: React.FC = () => {
 		<Wrapper bg='brand'>
 			<Grid id='booking' templateColumns={{ base: '1fr', md: '1fr 1fr' }} py={16}>
 				<Box pt={{ base: 0, md: '10%' }} mb={{ base: 8, md: 0 }}>
-					<Heading mb={{ base: 0, md: 4 }} as='h2' textAlign={{ base: 'center', md: 'start' }}>
+					<Heading color='white' mb={{ base: 0, md: 4 }} as='h2' textAlign={{ base: 'center', md: 'start' }}>
 						Book a Demo
 					</Heading>
-					<Text textAlign={{ base: 'center', md: 'start' }}>Looking forward to connecting!</Text>
+					<Text color='white' textAlign={{ base: 'center', md: 'start' }}>Looking forward to connecting!</Text>
 				</Box>
 				<Grid as='form' templateColumns='1fr 1fr' gap={4} onSubmit={sendEmail}>
 					<Input
